@@ -11,6 +11,17 @@ export interface Item {
   description: string;
 }
 
+export interface Request {
+  id: number;
+  title: string;
+  type: "Buy" | "Rent";
+  category: "Electronics" | "Books" | "Sports" | "Misc";
+  maxPrice: number;
+  requesterId: number;
+  description: string;
+  createdAt: string;
+}
+
 export interface User {
   id: number;
   name: string;
@@ -154,3 +165,47 @@ export const currentUser: User = {
   rating: 4.8,
   avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul"
 };
+
+export const requests: Request[] = [
+  {
+    id: 1,
+    title: "Looking for MacBook Pro",
+    type: "Buy",
+    category: "Electronics",
+    maxPrice: 50000,
+    requesterId: 2,
+    description: "Need a MacBook Pro for development work. Preferably 2020 or newer model.",
+    createdAt: "2 hours ago"
+  },
+  {
+    id: 2,
+    title: "Need Calculus Textbook",
+    type: "Rent",
+    category: "Books",
+    maxPrice: 200,
+    requesterId: 3,
+    description: "Looking to rent Advanced Engineering Mathematics for this semester.",
+    createdAt: "1 day ago"
+  },
+  {
+    id: 3,
+    title: "Football needed",
+    type: "Rent",
+    category: "Sports",
+    maxPrice: 50,
+    requesterId: 1,
+    description: "Need a football for weekend matches. Good condition preferred.",
+    createdAt: "3 days ago"
+  },
+  {
+    id: 4,
+    title: "Wireless Mouse",
+    type: "Buy",
+    category: "Electronics",
+    maxPrice: 800,
+    requesterId: currentUser.id,
+    description: "Looking for a good wireless mouse for daily use.",
+    createdAt: "5 hours ago"
+  }
+];
+

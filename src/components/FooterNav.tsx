@@ -1,4 +1,4 @@
-import { Home, Package, User } from "lucide-react";
+import { Home, Package, User, MessageSquare } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 
 const FooterNav = () => {
@@ -15,12 +15,21 @@ const FooterNav = () => {
         </NavLink>
 
         <NavLink
+          to="/requests"
+          className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors"
+          activeClassName="text-primary"
+        >
+          <MessageSquare className="h-5 w-5" />
+          <span className="text-xs">Requests</span>
+        </NavLink>
+
+        <NavLink
           to="/my-listings"
           className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors"
           activeClassName="text-primary"
         >
           <Package className="h-5 w-5" />
-          <span className="text-xs">My Listings</span>
+          <span className="text-xs">Listings</span>
         </NavLink>
 
         <NavLink
