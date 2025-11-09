@@ -1,14 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import FooterNav from "@/components/FooterNav";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShieldCheck, Star, Mail, Edit, Award } from "lucide-react";
-import { currentUser, items } from "@/data/mockData";
+import { ShieldCheck, Star, Mail, Edit, Award, Package, MessageSquare, ChevronRight } from "lucide-react";
+import { currentUser, items, requests } from "@/data/mockData";
 
 const Profile = () => {
+  const navigate = useNavigate();
   const myItems = items.filter(item => item.ownerId === currentUser.id);
+  const myRequests = requests.filter(request => request.requesterId === currentUser.id);
 
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-0">
@@ -80,6 +83,44 @@ const Profile = () => {
                   <p className="text-2xl font-bold text-secondary">{Math.floor(currentUser.rating * 10)}</p>
                   <p className="text-sm text-muted-foreground">Total Reviews</p>
                 </div>
+              </div>
+            </div>
+
+            <div className="border-t pt-6 mt-6">
+              <h2 className="font-semibold text-lg mb-3">My Activity</h2>
+              
+              <div className="space-y-2">
+                <button
+                  onClick={() => navigate("/my-listings")}
+                  className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 rounded-lg transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Package className="h-5 w-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <p className="font-medium">My Listings</p>
+                      <p className="text-sm text-muted-foreground">{myItems.length} active items</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                </button>
+
+                <button
+                  onClick={() => navigate("/my-requests")}
+                  className="w-full flex items-center justify-between p-4 bg-muted/30 hover:bg-muted/50 rounded-lg transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                      <MessageSquare className="h-5 w-5 text-secondary" />
+                    </div>
+                    <div className="text-left">
+                      <p className="font-medium">My Requests</p>
+                      <p className="text-sm text-muted-foreground">{myRequests.length} active requests</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                </button>
               </div>
             </div>
 

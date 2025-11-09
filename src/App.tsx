@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import Requests from "./pages/Requests";
+import MyRequests from "./pages/MyRequests";
 import MyListings from "./pages/MyListings";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
           <Route path="/requests" element={<Requests />} />
+          <Route path="/my-requests" element={<MyRequests />} />
           <Route path="/my-listings" element={<MyListings />} />
           <Route path="/my-listings" element={<MyListings />} />
           <Route path="/profile" element={<Profile />} />

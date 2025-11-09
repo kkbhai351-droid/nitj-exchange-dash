@@ -115,6 +115,42 @@ export const items: Item[] = [
     condition: "Good condition.",
     verified: false,
     description: "2 rackets with shuttlecocks included."
+  },
+  {
+    id: 7,
+    title: "Study Lamp",
+    type: "Sell",
+    category: "Misc",
+    price: 600,
+    ownerId: 4,
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&h=600&fit=crop",
+    condition: "Excellent condition.",
+    verified: true,
+    description: "LED desk lamp with adjustable brightness. Perfect for late-night study sessions."
+  },
+  {
+    id: 8,
+    title: "Graphing Calculator",
+    type: "Rent",
+    category: "Electronics",
+    price: 50,
+    ownerId: 4,
+    image: "https://images.unsplash.com/photo-1611165973554-0d4e32d8e00d?w=800&h=600&fit=crop",
+    condition: "Good working condition.",
+    verified: true,
+    description: "TI-84 Plus graphing calculator. Great for exams and assignments."
+  },
+  {
+    id: 9,
+    title: "Python Programming Book",
+    type: "Sell",
+    category: "Books",
+    price: 350,
+    ownerId: 4,
+    image: "https://images.unsplash.com/photo-1589998059171-988d887df646?w=800&h=600&fit=crop",
+    condition: "Like new.",
+    verified: true,
+    description: "Comprehensive Python guide with exercises. Minimal wear."
   }
 ];
 
